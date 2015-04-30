@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Randomize Image</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    <script src="randomizer.js"></script>
+</head>
+
+<body>
+    <h1>Randomize Image</h1>
+    <label>Image File:</label>
+    <input type="file" id="imageLoader" name="imageLoader" data-bind="event: {change: uploadImage}" />
+    <label>Amount of randomness:</label>
+    <input type="range" min="0" max="100"  value="0" data-bind="value: randomness, valueUpdate: 'input'" />
+    <span data-bind="text: randomness"></span>
+    <button style="margin-left:2em;" data-bind="click: randomize">Randomize</button><br /><br />   
+    <canvas id="canvas1"></canvas>    
+    <canvas id="canvas2"></canvas>
+    <div>Brought to you by <a href="https://twitter.com/fd97207" target="_blank">@fd97207</a></div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://dl.dropboxusercontent.com/u/74728667/randomizer.html" data-text="Check out Image Randomizer">Tweet</a>
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+    <div id="fb-root"></div>
+    <script>
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <div class="fb-like" data-href="https://dl.dropboxusercontent.com/u/74728667/randomizer.html" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+</body>
+
+</html>
