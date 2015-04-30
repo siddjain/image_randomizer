@@ -5,9 +5,7 @@ class Randomizer
 
     private _canvas1: HTMLCanvasElement;
 
-    private _canvas2: HTMLCanvasElement;
-
-    private _permutation: number[];
+    private _canvas2: HTMLCanvasElement;  
 
     constructor(canvas1: string, canvas2: string)
     {        
@@ -42,8 +40,7 @@ class Randomizer
 
                 ctx.drawImage(img, 0, 0);
 
-                Randomizer._clearCanvas(this._canvas2);
-                this._permutation = Randomizer.generateRandomArray(img.width * img.height);
+                Randomizer._clearCanvas(this._canvas2);                
             }
 
             img.src = event.target.result;
@@ -82,7 +79,7 @@ class Randomizer
 
         var n = width * height;
 
-        var permutation = this._permutation;
+        var permutation = Randomizer.generateRandomArray(width * height);
 
         var ctx = canvas.getContext("2d");
 
